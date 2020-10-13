@@ -8,11 +8,14 @@ HEADERS	=	libft.h
 
 all: $(NAME)
 
-$(NAME) : $(HEADERS) $(COMP)
+$(NAME): $(HEADERS) $(COMP)
 	ar rc $(NAME) $(COMP)
 
-$(NAME) : $(HEADERS) $(COMP) 
+$(NAME): $(HEADERS) $(COMP) 
 	ar rc $(NAME) $(COMP)
+
+test:
+	$(CC) $(CFLAGS) -c $(OBJ) $(BONUS) -o $(COMP)
 
 clean:
 	rm -f $(COMP)
@@ -22,4 +25,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re test
