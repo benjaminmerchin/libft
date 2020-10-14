@@ -1,24 +1,25 @@
 NAME	=	libft.a
 CC		=	gcc
-OBJ		=	src/*.c
-BONUS	=	bonus/*.c
-COMP 	=	$(OBJ:.c=.o) $(BONUS:.c=.o)
+OBJ		=	$(addprefix src/, ft_strlen.c ft_atoi.c ft_tolower.c ft_toupper.c)
+BONUS	=	$(addprefix bonus/, )
+COMP 	=	$(OBJ:.c=.o)
+COMP_BONUS	=	$(BONUS:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
-HEADERS	=	libft.h
+HEADERS	=	includes
 
 all: $(NAME)
 
-$(NAME): $(HEADERS) $(COMP)
+$(NAME): $(COMP)
 	ar rc $(NAME) $(COMP)
 
-$(NAME): $(HEADERS) $(COMP) 
-	ar rc $(NAME) $(COMP)
+bonus: $(COMP) $(COMP_BONUS)
+	ar rc $(NAME) $(COMP) $(COMP_BONUS)
 
-test:
-	$(CC) $(CFLAGS) -c $(OBJ) $(BONUS) -o $(COMP)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@ -I $(HEADERS)
 
 clean:
-	rm -f $(COMP)
+	rm -f $(COMP) $(COMP_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
