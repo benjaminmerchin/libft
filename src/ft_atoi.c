@@ -1,4 +1,4 @@
-//#include "libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 }
 
 
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -40,4 +40,4 @@ int main(int ac, char **av)
 	printf("%d\n", atoi(av[1]));
 
 	return (0);
-}
+}*/

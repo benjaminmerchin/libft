@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t	strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	size_t i;
 	size_t j;
@@ -8,7 +8,7 @@ size_t	strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 	
 	i = 0;
 	j = 0;
-	if (dstsize < ft_strlen(dst))
+	if (dstsize < (size_t)ft_strlen(dst))
 		size = dstsize + ft_strlen(src);
 	else
 		size = ft_strlen(dst) + ft_strlen(src);
