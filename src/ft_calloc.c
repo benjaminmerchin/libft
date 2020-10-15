@@ -3,6 +3,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t i;
+	size_t j;
 	char *tab;
 
 	i = 0;
@@ -11,9 +12,10 @@ void	*ft_calloc(size_t count, size_t size)
 		count = 1;
 		size = 1;
 	}
-	if (!(tab = malloc(size * count)))
+	j = count * size;
+	if (!(tab = malloc(j)))
 		return (0);
-	while (i < count * size)
+	while (i < j)
 		tab[i++] = 0;
 	return ((void *)tab);
 }
