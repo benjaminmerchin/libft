@@ -1,15 +1,20 @@
-/*typedef struct	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-*/
-
 #include "libft.h"
+/*
+void del(void *content)
+{
+	free(content);
+}
+
+void *f(void *content)
+{
+	char *temp;
+
+	temp = (char *)content;
+	if (temp[0] == 'o')
+		temp = "ooooo";
+	return ((void *)temp);
+}
+*/
 
 t_list *ft_lstnew(void *content)
 {
@@ -69,12 +74,7 @@ void ft_lstadd_back(t_list **alst, t_list *new)
 		lst = lst->next;
 	lst->next = new;
 }
-/*
-void del(void *content)
-{
-	free(content);
-}
-*/
+
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	(*del)(lst->content);
@@ -116,23 +116,31 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *new;
+	t_list *begin;
 	
-	if (!f || !del)
-		return ;
-	
+	if (!f || !del || !lst)
+		return (NULL);
+	new = NULL;
 	while (lst)
 	{
-		(*f)(lst->content);
+		if (new)
+		{
+			new->next = malloc(sizeof(t_list));
+			new = new->next;
+//			printf("1");
+		}
+		else
+		{
+			new = malloc(sizeof(t_list));
+			begin = new;
+//			printf("2");
+		}
+		new->next = NULL;
+		new->content = (*f)(lst->content);
 		lst = lst->next;
 	}
-
-
-
-
-
-
-}
-*/
+	return (begin);
+}*/
 /*
 int main(void)
 {
@@ -178,8 +186,9 @@ int main(void)
 //	test = ft_lstlast(lst);
 //	printf("%s\n", (char *)test->content);
 //	printf("------------------------\n");
-	ft_lstadd_back(&backup1, ft_lstnew((void *)"hoo"));
-	ft_lstclear(&backup1, void (*del)(void*));
+//	ft_lstadd_back(&backup1, ft_lstnew((void *)"hoo"));
+//	ft_lstclear(&backup1, void (*del)(void*));
+	backup1 = ft_lstmap(lst, f, del);
 	while (backup1)
 	{
 //		write(1, "2", 1);
