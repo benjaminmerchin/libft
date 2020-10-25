@@ -6,7 +6,7 @@
 /*   By: Benjamin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 00:36:46 by Benjamin          #+#    #+#             */
-/*   Updated: 2020/10/16 00:45:42 by Benjamin         ###   ########.fr       */
+/*   Updated: 2020/10/25 02:47:53 by bmerchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	char *str;
-	
+	int		i;
+	int		j;
+	char	*str;
+
 	i = 0;
 	j = 0;
 	if (!s1 || !s2)

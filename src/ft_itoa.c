@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/25 02:31:17 by bmerchin          #+#    #+#             */
+/*   Updated: 2020/10/25 02:32:21 by bmerchin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_len(long int nbr)
+int		ft_len(long int nbr)
 {
 	int i;
 
@@ -25,12 +37,12 @@ void	ft_itoa_fill(char *str, long nbr, int i)
 		ft_itoa_fill(str, nbr, i - 1);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	int i;
-	int sign;
-	long int nbr;
+	char		*str;
+	int			i;
+	int			sign;
+	long int	nbr;
 
 	i = 0;
 	sign = 0;
