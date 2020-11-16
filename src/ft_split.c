@@ -6,13 +6,13 @@
 /*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 02:40:43 by bmerchin          #+#    #+#             */
-/*   Updated: 2020/10/25 02:42:02 by bmerchin         ###   ########.fr       */
+/*   Updated: 2020/11/16 15:36:43 by bmerchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbr_str(char *s, char c)
+static int	ft_nbr_str(char *s, char c)
 {
 	int i;
 	int counter;
@@ -33,7 +33,7 @@ int		ft_nbr_str(char *s, char c)
 	return (counter);
 }
 
-int		ft_len_str(int i, char *s, char c)
+static int	ft_len_str(int i, char *s, char c)
 {
 	int counter;
 
@@ -46,7 +46,7 @@ int		ft_len_str(int i, char *s, char c)
 	return (counter);
 }
 
-char	**ft_split2(char **tab, char const *s, char c, int nbr_str)
+static char	**ft_split2(char **tab, char const *s, char c, int nbr_str)
 {
 	int len_str;
 	int cursor;
@@ -75,7 +75,7 @@ char	**ft_split2(char **tab, char const *s, char c, int nbr_str)
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	int		nbr_str;
 	char	**tab;

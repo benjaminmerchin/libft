@@ -6,13 +6,13 @@
 /*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 02:31:17 by bmerchin          #+#    #+#             */
-/*   Updated: 2020/10/25 02:32:21 by bmerchin         ###   ########.fr       */
+/*   Updated: 2020/11/16 15:38:38 by bmerchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_len(long int nbr)
+static int	ft_len(long int nbr)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int		ft_len(long int nbr)
 	return (i);
 }
 
-void	ft_itoa_fill(char *str, long nbr, int i)
+static void	ft_itoa_fill(char *str, long nbr, int i)
 {
 	int temp;
 

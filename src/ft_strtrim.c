@@ -6,13 +6,13 @@
 /*   By: Benjamin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 00:47:53 by Benjamin          #+#    #+#             */
-/*   Updated: 2020/10/25 02:46:20 by bmerchin         ###   ########.fr       */
+/*   Updated: 2020/11/16 15:36:58 by bmerchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isinset(char c, char *set)
+static int	ft_isinset(char c, char *set)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int		ft_isinset(char c, char *set)
 	return (0);
 }
 
-int		ft_counter_len(char const *s1, char const *set)
+static int	ft_counter_len(char const *s1, char const *set)
 {
 	int i;
 	int counter;
@@ -47,7 +47,7 @@ int		ft_counter_len(char const *s1, char const *set)
 	return (ft_strlen(s1) - counter);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
