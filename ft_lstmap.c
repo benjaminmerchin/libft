@@ -14,14 +14,13 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new;
-	t_list *begin;
-	t_list *temp;
+	t_list	*new;
+	t_list	*begin;
+	t_list	*temp;
 
 	(void)del;
-	if (!lst || !f)
-		return (NULL);
-	if (!(new = malloc(sizeof(t_list))))
+	new = malloc(sizeof(t_list));
+	if (!new || !lst || !f)
 		return (NULL);
 	begin = new;
 	while (lst)
@@ -31,7 +30,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 		if (lst)
 		{
-			if (!(new->next = malloc(sizeof(t_list))))
+			new->next = malloc(sizeof(t_list));
+			if (!new->next)
 				return (NULL);
 			new = new->next;
 		}

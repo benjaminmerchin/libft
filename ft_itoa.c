@@ -14,7 +14,7 @@
 
 static int	ft_len(long int nbr)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	nbr /= 10;
@@ -28,7 +28,7 @@ static int	ft_len(long int nbr)
 
 static void	ft_itoa_fill(char *str, long nbr, int i)
 {
-	int temp;
+	int	temp;
 
 	temp = nbr % 10;
 	str[i - 1] = temp + '0';
@@ -37,7 +37,7 @@ static void	ft_itoa_fill(char *str, long nbr, int i)
 		ft_itoa_fill(str, nbr, i - 1);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*str;
 	int			i;
@@ -55,7 +55,8 @@ char		*ft_itoa(int n)
 	}
 	else
 		nbr = n;
-	if (!(str = malloc(sizeof(char) * (ft_len(nbr) + sign + 1))))
+	str = malloc(sizeof(char) * (ft_len(nbr) + sign + 1));
+	if (!str)
 		return (NULL);
 	if (sign == 1)
 		str[0] = '-';

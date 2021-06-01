@@ -25,7 +25,8 @@ void	*ft_calloc(size_t count, size_t size)
 		size = 1;
 	}
 	j = count * size;
-	if (!(tab = malloc(j)))
+	tab = malloc(j);
+	if (!tab)
 		return (0);
 	while (i < j)
 		tab[i++] = 0;

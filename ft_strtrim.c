@@ -14,7 +14,7 @@
 
 static int	ft_isinset(char c, char *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -28,8 +28,8 @@ static int	ft_isinset(char c, char *set)
 
 static int	ft_counter_len(char const *s1, char const *set)
 {
-	int i;
-	int counter;
+	int	i;
+	int	counter;
 
 	i = 0;
 	counter = 0;
@@ -47,7 +47,7 @@ static int	ft_counter_len(char const *s1, char const *set)
 	return (ft_strlen(s1) - counter);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -59,7 +59,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	len = ft_counter_len(s1, set);
 	if (len < 0)
 		return (ft_calloc(1, 1));
-	if (!(str = malloc(sizeof(char) * (len + 1))))
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
